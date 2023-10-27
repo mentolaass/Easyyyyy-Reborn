@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>Easyyyyy_Reborn</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Description>autoclacker</Description>
+    <Copyright>mentolaas</Copyright>
+    <PackageIcon></PackageIcon>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Resources\Icons\close_icon.png" />
+    <None Remove="Resources\Icons\close_icon_active.png" />
+    <None Remove="Resources\Icons\github_icon.png" />
+    <None Remove="Resources\Icons\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.75" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Montserrat-Regular.ttf" />
+    <Resource Include="Resources\Icons\close_icon.png" />
+    <Resource Include="Resources\Icons\close_icon_active.png" />
+    <Resource Include="Resources\Icons\github_icon.png" />
+    <Resource Include="Resources\Icons\logo.png" />
+  </ItemGroup>
+
+</Project>
