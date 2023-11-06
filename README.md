@@ -12,3 +12,6 @@ An autoclicker written in NET Framework 7.0.
 
 ## Usage app
 You can use the program and source code however you want.
+
+## How to run?
+If you do not have desktop runtime .NET 7.0 installed, then you need to [install](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-7.0.13-windows-x64-installer) it or [install](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-7.0.13-windows-x86-installer) it for x86.
