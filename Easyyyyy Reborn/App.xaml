@@ -5,5 +5,7 @@
     xmlns:local="clr-namespace:Easyyyyy_Reborn"
     Startup="Application_Startup"
     StartupUri="Views/MainWindow.xaml">
+
     <Application.Resources />
+
 </Application>

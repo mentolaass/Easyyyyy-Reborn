@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Windows;
 
 namespace Easyyyyy_Reborn.Core
 {
@@ -8,9 +9,13 @@ namespace Easyyyyy_Reborn.Core
         # region Executable Methods
         private void ExecuteCommonClick(bool ClickIsLeftButton, bool ClickIsDouble)
         {
-            App.TotalClicks += ClickIsDouble ? 2 : 1;
+            int ExecuteClicks = 0;
+            if (ClickIsDouble) ExecuteClicks = 2;
+            else ExecuteClicks = 1;
 
-            for (int x = 0; x != (ClickIsDouble ? 2 : 1); x++)
+            App.TotalClicks += ExecuteClicks;
+
+            for (int x = 0; x != ExecuteClicks; x++)
             {
                 if (ClickIsLeftButton)
                 {
@@ -32,22 +37,30 @@ namespace Easyyyyy_Reborn.Core
 
         private void ExecuteBindedClick()
         {
-            bool IsEnabledRandom = App.ApplicationConfiguration == null ? false : App.ApplicationConfiguration.IsEnabledRandom;
-            bool IsLeftClick = App.ApplicationConfiguration == null ? false : App.ApplicationConfiguration.IsLeftClick;
-            bool IsDefaultClicks = App.ApplicationConfiguration == null ? true : !App.ApplicationConfiguration.IsDefaultClicks;
-            int CountClicksPerSecond = App.ApplicationConfiguration == null ? 7 : App.ApplicationConfiguration.CountClicksPerSecond;
+            bool IsEnabledRandom = App.ApplicationConfiguration.IsEnabledRandom;
+            bool IsLeftClick = App.ApplicationConfiguration.IsLeftClick;
+            bool IsDefaultClicks = !App.ApplicationConfiguration.IsDefaultClicks;
+            int CountClicksPerSecond = App.ApplicationConfiguration.CountClicksPerSecond;
 
             ExecuteCommonClick(IsLeftClick, IsDefaultClicks);
 
-            Thread.Sleep(IsEnabledRandom ? 1000 / new Random().Next(CountClicksPerSecond - ((CountClicksPerSecond / 100) * 20), CountClicksPerSecond) : 1000 / CountClicksPerSecond);
+            int toWait = 0;
+            if (IsEnabledRandom)
+                toWait = 1000 / new Random().Next(CountClicksPerSecond - (CountClicksPerSecond / 100 * 50), CountClicksPerSecond);
+            else 
+                toWait = 1000 / CountClicksPerSecond;
+
+            Thread.Sleep(toWait);
         }
 
         private void LoopHandleKeyState()
         {
+            var spin = new SpinWait();
+
             for (; ; )
             {
-                bool IsToggleMode = App.ApplicationConfiguration == null ? false : App.ApplicationConfiguration.IsToggleMode;
-                int IntegerBindKey = App.ApplicationConfiguration == null ? 0 : App.ApplicationConfiguration.IntBindKey;
+                bool IsToggleMode = App.ApplicationConfiguration.IsToggleMode;
+                int IntegerBindKey = App.ApplicationConfiguration.IntBindKey;
 
                 // HOLD MODE
                 if (IntegerBindKey != 0 && !IsToggleMode)
@@ -69,7 +82,7 @@ namespace Easyyyyy_Reborn.Core
 
                 if (!App.ApplicationIsWorking) break;
 
-                Thread.Sleep(1);
+                spin.SpinOnce();
             }
         }
     }

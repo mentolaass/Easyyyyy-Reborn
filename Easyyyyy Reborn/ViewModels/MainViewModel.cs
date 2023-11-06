@@ -306,13 +306,15 @@ namespace Easyyyyy_Reborn.ViewModels
             UpdaterStateEasyyyy.Elapsed += UpdaterStateEasyyyy_Elapsed;
             UpdaterStateEasyyyy.Start();
 
-            new Thread(UpdaterToggleMode).Start();
+            new Thread(HandleStateToggleMode).Start();
         }
 
-        private void UpdaterToggleMode()
+        private void HandleStateToggleMode()
         {
             new Thread(() =>
             {
+                var spin = new SpinWait();
+
                 for (; ; )
                 {
                     if (App.ApplicationConfiguration.IsToggleMode && NativeMethods.GetAsyncKeyState(IntBindKey))
@@ -323,7 +325,7 @@ namespace Easyyyyy_Reborn.ViewModels
 
                     if (!App.ApplicationIsWorking) break;
 
-                    Thread.Sleep(5);
+                    spin.SpinOnce();
                 }
             }).Start();
         }

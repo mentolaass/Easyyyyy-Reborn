@@ -56,7 +56,8 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Foreground="Gray">
-                    <Run FontSize="13" Text="Easyyyyy" /> <Run
+                    <Run FontSize="13" Text="Easyyyyy" />
+                    <Run
                         FontSize="13"
                         Foreground="#0077ff"
                         Text="Reborn" />
@@ -68,6 +69,7 @@
                         FontSize="13"
                         Foreground="#0077ff"
                         Text="{Binding CurrentClicks, UpdateSourceTrigger=PropertyChanged}" />
+                    <Run FontSize="13" Text="cps" />
                 </TextBlock>
 
                 <Border
@@ -660,11 +662,11 @@
                 </Border>
 
                 <Label
-                    Canvas.Left="101"
+                    Canvas.Left="123"
                     Canvas.Top="105"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Content="Bind and status"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Binding"
                     FontSize="12"
                     Foreground="Gray" />
 
@@ -853,20 +855,11 @@
                     Foreground="Gray" />
 
                 <Label
-                    Canvas.Left="10"
-                    Canvas.Top="10"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Content="Main Settings"
-                    FontSize="14"
-                    Foreground="Gray" />
-
-                <Label
-                    Canvas.Left="107"
-                    Canvas.Top="43"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Content="Clicks"
+                    Canvas.Left="18"
+                    Canvas.Top="17"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Count CPS"
                     FontSize="12"
                     Foreground="Gray" />
 
@@ -876,15 +869,6 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Content="Click"
-                    FontSize="12"
-                    Foreground="Gray" />
-
-                <Label
-                    Canvas.Left="107"
-                    Canvas.Top="69"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Content="xD"
                     FontSize="12"
                     Foreground="Gray" />
 
