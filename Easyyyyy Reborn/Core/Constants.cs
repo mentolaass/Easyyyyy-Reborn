@@ -6,6 +6,6 @@
 
         public static string ConfigurationLocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData) + "\\Easyyyyy Reborn\\configuration.json";
 
-        public const string GithubRepository = "";
+        public const string GithubRepository = "https://github.com/mentolaass/Easyyyyy-Reborn";
     }
 }
