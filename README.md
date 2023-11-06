@@ -1,4 +1,4 @@
-# Easyyyyy Reborn [![Current Version](https://img.shields.io/badge/version-2.0.0.0-blue.svg)](https://github.com/mentolaass/Easyyyyy)
+# Easyyyyy Reborn [![Current Version](https://img.shields.io/badge/version-2.0.0.0-blue.svg)](https://github.com/mentolaass/Easyyyyy) ![GitHub all releases](https://img.shields.io/github/downloads/mentolaass/Easyyyyy-Reborn/total?style=plastic)
 An autoclicker written in NET Framework 7.0.
 
 ## Functional
